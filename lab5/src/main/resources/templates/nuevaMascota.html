@@ -1,0 +1,82 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <link rel="icon" th:href="@{/img/icon.png}" type="image/x-icon" />
+  <title>Nuevo viaje</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/fontawesome-all.min.css}">
+</head>
+<body>
+<div class='container'>
+  <div>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid justify-content-center">
+        <a class="navbar-brand" href="#">
+          <img src="/img/travel%20can_logo.png" alt="" width="60" height="60" class="d-inline-block align-text-top">
+          Travel Can
+        </a>
+      </div>
+    </nav>
+
+  </div>
+  <main>
+    <div class="container px-4 py-5">
+      <h1 class="pb-2 mb-3 border-bottom">Nueva Mascota</h1>
+      <form method="post" th:action="@{/mascotas/save}" class="mt-2">
+        <div class="mb-3">
+          <label for="nombreMascota" class="form-label">Nombre de mascota</label>
+          <input type="text" class="form-control" name="nombreMascota" id="nombreMascota">
+        </div>
+        <div class="mb-3">
+          <label for="genero" class="form-label">Genero</label>
+          <input type="text" class="form-control" name="genero" id="genero">
+        </div>
+        <div class="mb-3">
+          <label for="edad" class="form-label">Edad</label>
+          <input type="text" class="form-control" name="edad" id="edad">
+        </div>
+        <div class="mb-3">
+          <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+          <input type="date" class="form-control" name="fechaNacimiento" id="fechaNacimiento">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Vacunado</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="vacunado" id="flexRadioDefault11">
+            <label class="form-check-label" for="flexRadioDefault11">
+              Si
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="vacunado" id="flexRadioDefault22" checked>
+            <label class="form-check-label" for="flexRadioDefault22">
+              No
+            </label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Desparacitado</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="desparasitado" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Si
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="desparasitado" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              No
+            </label>
+          </div>
+        </div>
+
+        <a th:href="@{/mascotas/lista}" class="btn btn-danger">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </form>
+    </div>
+  </main>
+</div>
+</body>
+</html>

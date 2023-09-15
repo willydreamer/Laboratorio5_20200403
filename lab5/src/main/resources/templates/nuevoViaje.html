@@ -1,0 +1,61 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="icon" th:href="@{/img/icon.png}" type="image/x-icon" />
+    <title>Nuevo viaje</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/fontawesome-all.min.css}">
+</head>
+<body>
+<div class='container'>
+    <div>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid justify-content-center">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/travel%20can_logo.png" alt="" width="60" height="60" class="d-inline-block align-text-top">
+                    Travel Can
+                </a>
+            </div>
+        </nav>
+
+    </div>
+    <main>
+        <div class="container px-4 py-5">
+            <h1 class="pb-2 mb-3 border-bottom">Nuevo viaje</h1>
+            <form method="post" th:action="@{/viajes/save}" class="mt-2">
+                <div class="mb-3">
+                    <label for="puntoRecojo" class="form-label">Punto de recojo</label>
+                    <input type="text" class="form-control" name="puntoRecojo" id="puntoRecojo">
+                </div>
+                <div class="mb-3">
+                    <label for="cantPersonas" class="form-label">Cantidad de personas</label>
+                    <input type="text" class="form-control" name="cantPersonas" id="cantPersonas">
+                </div>
+                <div class="mb-3">
+                    <label for="cantPerros" class="form-label">Cantidad de perros</label>
+                    <input type="text" class="form-control" name="cantPerros" id="cantPerros">
+                </div>
+                <div class="mb-3">
+                    <label for="supplier" class="form-label">Selecciona Persona</label>
+                    <select class="form-select" name="supplier" id="supplier">
+                        <option th:each="supplier: ${listaPersonas}"
+                                th:text="${supplier.nombre}" th:value="${supplier.id}">Open this select menu</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Selecciona Lugar</label>
+                    <select class="form-select" name="category" id="category">
+                        <option th:each="lugar: ${listaLugares}"
+                                th:text="${lugar.nombreLugar}" th:value="${lugar.id}">Open this select menu</option>
+                    </select>
+                </div>
+                <a th:href="@{/viajes/lista}" class="btn btn-danger">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="icon" th:href="@{/img/icon.png}" type="image/x-icon" />
+    <title>Nuevo Lugar</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/fontawesome-all.min.css}">
+</head>
+<body>
+<div class='container'>
+    <div>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid justify-content-center">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/travel%20can_logo.png" alt="" width="60" height="60" class="d-inline-block align-text-top">
+                    Travel Can
+                </a>
+            </div>
+        </nav>
+
+    </div>
+    <main>
+        <div class="container px-4 py-5">
+            <h1 class="pb-2 mb-3 border-bottom">Nuevo Lugar</h1>
+            <form method="post" th:action="@{/lugares/save}" class="mt-2">
+                <div class="mb-3">
+                    <label for="nombreLugar" class="form-label">Nombre del lugar</label>
+                    <input type="text" class="form-control" name="nombreLugar" id="nombreLugar">
+                </div>
+                <div class="mb-3">
+                    <label for="descripLugar" class="form-label">Descripción</label>
+                    <input type="text" class="form-control" name="descripLugar" id="descripLugar">
+                </div>
+                <div class="mb-3">
+                    <label for="fechaLugar" class="form-label">Fecha de visita</label>
+                    <input type="date" class="form-control" name="fechaLugar" id="fechaLugar">
+                </div>
+                <a th:href="@{/lugares/lista}" class="btn btn-danger">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+</html>

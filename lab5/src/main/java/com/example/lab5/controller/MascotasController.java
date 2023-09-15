@@ -17,6 +17,7 @@ import java.util.Optional;
 @RequestMapping("/mascotas")
 public class MascotasController {
     final MascotasRepository mascotasRepository;
+    int nitems;
 
     public MascotasController(MascotasRepository mascotasRepository) {
         this.mascotasRepository = mascotasRepository;
@@ -25,6 +26,7 @@ public class MascotasController {
     @GetMapping(value = {"","lista"})
     public String listaMascotas (Model model){
         model.addAttribute("listaMascotas", mascotasRepository.findAll());
+
         return "listaMascotas";
     };
     @GetMapping(value = {"","nuevo"})
